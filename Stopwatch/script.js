@@ -19,17 +19,19 @@ let subMiliseconds = 0;
 let subTimer;
 let lapCounter = 0;
 
+function converter(data) {
+	return	('0'+data.getUTCHours()).slice(-2) + ':' +
+			('0'+data.getUTCMinutes()).slice(-2) + ':' +
+			('0'+data.getUTCSeconds()).slice(-2) + ':' +
+			('0'+data.getUTCMilliseconds()/10).slice(-2);
+}
+
 function start() {
-    watch.classList.remove('paused');
 	clearInterval(timer);
 	timer = setInterval( () => {
 		milliseconds += 10;
 		let timer = new Date(milliseconds);
-		watch.textContent =
-			('0'+timer.getUTCHours()).slice(-2) + ':' +
-			('0'+timer.getUTCMinutes()).slice(-2) + ':' +
-			('0'+timer.getUTCSeconds()).slice(-2) + ':' +
-			('0'+timer.getUTCMilliseconds()).slice(-3,-1);
+		watch.textContent = converter(timer);
 	},10);
 
 	startButton.classList.add('invisible');
@@ -42,16 +44,11 @@ function startLap() {
 	subTimer = setInterval( () => {
 		subMiliseconds += 10;
 		let subTimer = new Date(subMiliseconds);
-		subWatch.textContent =
-			('0'+subTimer.getUTCHours()).slice(-2) + ':' +
-			('0'+subTimer.getUTCMinutes()).slice(-2) + ':' +
-			('0'+subTimer.getUTCSeconds()).slice(-2) + ':' +
-			('0'+subTimer.getUTCMilliseconds()).slice(-3,-1);
+		subWatch.textContent = converter(subTimer);
 	},10);
 }
 
 function pause() {
-    watch.classList.add('paused');
     clearInterval(timer);
     clearInterval(subTimer);
 
@@ -74,7 +71,6 @@ function cont() {
 }
 
 function reset() {
-    if (watch.classList.contains('paused')) {
 	    clearInterval(timer);
         clearInterval(subTimer);
 	    milliseconds = 0;
@@ -92,7 +88,6 @@ function reset() {
 		lapsTitle.classList.add('invisible');
 		totalTitle.classList.add('invisible');
 		lapTitle.classList.add('invisible');
-    }
 };
 
 function addLap() {
