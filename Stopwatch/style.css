@@ -1,0 +1,85 @@
+body {
+    background-color: black;
+    color: white;
+}
+.addSW {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background: darkred;
+}
+.stopwatches {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.stopwatch {
+    min-width: 300px;
+    max-width: 300px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.stopwatch__laptime {
+    margin-bottom: 0px;
+}
+.stopwatch__title {
+    margin: 0px;
+    margin-top: 20px;
+}
+.stopwatch__info {
+    display: flex;
+    flex-direction: row;
+}
+.lapCounter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+}
+.laps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+}
+.total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.invisible {
+    display: none;
+}
+.stopwatch__buttons {
+    position: absolute;
+    top: 50px;
+}
+.button {
+    width: 75px;
+    height: 30px;
+    font-size: 16px;
+    margin-right: 5px;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: blue;
+}
+.newLap {
+    margin-bottom: 10px;
+}
