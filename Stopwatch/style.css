@@ -2,13 +2,37 @@ body {
     background-color: black;
     color: white;
 }
-.stopwatch {
-    max-width: 300px;
+.addSW {
+    display: block;
     margin: 0 auto;
-    margin-top: 250px;
+    margin-top: 30px;
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background: darkred;
+}
+.stopwatches {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.stopwatch {
+    min-width: 300px;
+    max-width: 300px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 .stopwatch__laptime {
     margin-bottom: 0px;
@@ -43,12 +67,13 @@ body {
 }
 .stopwatch__buttons {
     position: absolute;
-    top: 355px;
+    top: 50px;
 }
 .button {
     width: 75px;
     height: 30px;
     font-size: 16px;
+    margin-right: 5px;
     color: white;
     outline: none;
     border: none;
